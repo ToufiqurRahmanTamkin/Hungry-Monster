@@ -49,7 +49,7 @@ const displayItems = data => {
         // foodItemDiv.addEventListener('click', function() {
         //     
         // })
-        getFoodIngredient(foodItemDiv, element);
+        getIngredient(foodItemDiv, element);
 
         const foodInfo = `
             <img src="${element.strMealThumb}">
@@ -59,18 +59,6 @@ const displayItems = data => {
         foodsDiv.appendChild(foodItemDiv);
     });
 }
-
-// function showFoodData(data, element) {
-//     data.addEventListener('click', () => {
-//         // console.log('clicked');
-//         // console.log(data);
-//         document.getElementById('ingredient').appendChild(data);
-//         const li = document.createElement('li');
-//         li.innerText = 'mine';
-//         document.getElementById('ul').appendChild(li);
-
-//     })
-// }
 
 function setIngredient(element, ingredients) {
     ingredients.push(element.strIngredient1);
@@ -95,18 +83,16 @@ function setIngredient(element, ingredients) {
     ingredients.push(element.strIngredient20);
 }
 
-function getFoodIngredient(foodMenuDiv, element) {
+function getIngredient(foodMenuDiv, element) {
 
     foodMenuDiv.addEventListener('click', () => {
         document.getElementById('parentDiv').style.display = "none";
 
         document.getElementById("ingredient").appendChild(foodMenuDiv);
-        // document.getElementById('ingredient').style.display = "block";
-
-
         const ingredients = [];
 
         setIngredient(element, ingredients);
+        document.getElementById('ingredient-id').style.display = 'block';
         const ul = document.getElementById('ul');
         let index = 0;
         while (ingredients[index] != "") {
@@ -119,43 +105,3 @@ function getFoodIngredient(foodMenuDiv, element) {
 
     });
 }
-
-// const ingrediantArray = [20];
-
-// function getFoodIngredient(foodMenuDiv,element){
-
-
-//     foodMenuDiv.addEventListener('click',()=>{
-//          const foodItem = document.getElementById("food-item").appendChild(foodMenuDiv);
-
-
-//             console.log(element.strIngredient1);
-
-//             const li = document.createElement('li');
-
-//         const ingredient = <li>${element.strIngredient1}</li>;
-//          li.innerText = ingredient;
-
-//          document.getElementById('ul').appendChild(ingredient); 
-//          count++;
-
-
-
-
-//     });
-// }
-
-
-
-
-// function getName(data) {
-//     // console.log(data.strMeal[0]);
-//     const array = [data];
-//     // console.log(array);
-//     array.map(function(data) {
-//         // console.log(data.meals);
-//         const array = data.meals;
-//         const names = array.strMeal;
-//         console.log(names);
-//     })
-// }
