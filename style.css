@@ -1,0 +1,43 @@
+body {
+    background-size: cover;
+    height: 100vh;
+}
+
+#display-data img {
+    width: 70px;
+    height: 70px;
+    border-radius: 5px;
+}
+
+#display-data div {
+    justify-content: center;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid rgb(235, 235, 235);
+    border-radius: 10px;
+    width: 22%;
+}
+
+#display-data div h3 {
+    font-size: 15px;
+    color: rgb(0, 119, 255);
+}
+
+.ulClass {
+    width: 100px;
+}
+
+.details img {
+    width: 550px;
+    height: 350px;
+    border-radius: 10px;
+    align-items: center;
+}
+
+.details {
+    text-align: center;
+}
+
+.food {
+    align-items: center;
+}
