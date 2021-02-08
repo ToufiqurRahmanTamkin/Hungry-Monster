@@ -1,5 +1,4 @@
 const getFoodMenu = (key, value) => {
-
     const api = `https://www.themealdb.com/api/json/v1/1/search.php?${key}=${value}`;
     fetch(api)
         .then(res => res.json())
@@ -17,6 +16,7 @@ const getFoodMenu = (key, value) => {
 
 const search_btn = document.getElementById("searchBtn");
 search_btn.addEventListener('click', () => {
+    document.getElementById('display-data').innerHTML = '';
     const food = document.getElementById("food").value;
     const len = food.length;
     // console.log(len);
@@ -29,13 +29,7 @@ search_btn.addEventListener('click', () => {
 function getData(data, value) {
     const arr = data.meals;
     const names = [];
-    // arr.forEach(element => {
-    //     names.push(element.strMeal);
-    // });
-    // console.log(names);
-
     displayItems(data.meals);
-
     names.filter(names => name === value);
     console.log(value);
 }
@@ -46,9 +40,6 @@ const displayItems = data => {
     data.forEach(element => {
         const foodItemDiv = document.createElement('div');
         foodItemDiv.className = 'food';
-        // foodItemDiv.addEventListener('click', function() {
-        //     
-        // })
         getIngredient(foodItemDiv, element);
 
         const foodInfo = `
@@ -58,6 +49,7 @@ const displayItems = data => {
         foodItemDiv.innerHTML = foodInfo;
         foodsDiv.appendChild(foodItemDiv);
     });
+
 }
 
 function setIngredient(element, ingredients) {
